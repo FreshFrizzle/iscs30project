@@ -1,0 +1,9 @@
+#ignores .env file for SECRET_KEY
+.env
+
+#ignores midtermenv virtual env
+midtermenv/
+.DS_Store
+.pyc
+__pycache__/
+db.sqlite3

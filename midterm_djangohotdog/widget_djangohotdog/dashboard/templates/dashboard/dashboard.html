@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Widget v2 {% endblock %}
+{% block content %}
+
+<h1>Welcome to Widget!</h1>
+<h2>Widget Users:</h2>
+<ul>
+{% for widgetUser in Users %}
+  <li>
+    <a href="{{ widgetUser.get_absolute_url }}">
+      {{ widgetUser.last_name }}, {{ widgetUser.first_name }}
+    </a>
+  </li>
+{% empty %}
+  <li>No Users</li>
+{% endfor %}
+</ul>
+
+<form action="{% url 'dashboard:widgetuser-add' %}"> 
+    <input type="submit" value="Add Widget User" />
+</form>
+
+<div class="footer">
+  <a href="/announcement_board/">Announcements</a><br>
+  <a href="/forum/">Forum</a><br>
+  <a href="/assignments/">Assignments</a><br>
+  <a href="/calendar/">Calendar</a><br>
+</div>
+{% endblock %}

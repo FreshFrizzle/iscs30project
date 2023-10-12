@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block title %}{{object.title}}{% endblock %}
+{% block content %}
+<h2> {{object.title}} </h2>
+<h4>by {{object.author}} </h4>
+<h4>{{object.pub_datetime|date:"m/d/Y, h:i A"}}</h4>
+<h4>{{object.body}}</h4>
+<br>
+
+<h2> POST REPLIES: </h2>
+
+<div class="replies">
+  {% for entry in object.reply_set.all %}
+    <b>{{ entry }}</b><br>
+    {{ entry.pub_datetime|date:"m/d/Y, h:i A" }}<br>
+    {{ entry.body }}<br>
+    <br>
+  {% endfor %}
+</div>
+
+<br>
+<button>
+  <a href="{% url 'Forum:post-edit' object.id %}" >
+  Edit Post
+</a>
+</button>
+{% endblock %}

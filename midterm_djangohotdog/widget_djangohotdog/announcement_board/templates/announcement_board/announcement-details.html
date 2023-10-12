@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{ object.title }} {% endblock %}
+{% block content %}
+
+<h2> {{ object.title }} </h2>
+<p> by {{object.author.first_name}} {{object.author.last_name}}</p>
+<p> {{ object.pub_datetime|date:'d/m/y h:i A' }} </p>
+<p> {{ object.body }} </p>
+
+<ul>
+{% for reaction in object.reaction_set.all %}
+  <li>
+    {{ reaction.name }}: {{ reaction.tally }}
+  </li>
+{% empty %}
+  <li>No Reactions.</li>
+{% endfor %}
+</ul>
+
+<form action="{% url 'announcement_board:announcement-edit' pk=object.pk %}">
+    <input type="submit" value="Edit Announcement" />
+</form>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Add Widget User {% endblock %}
+{% block content %}
+
+<h1> Add a new Widget User: </h1>
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <input type="submit" value="Add Widget User"/>
+  </form>
+
+
+{% endblock %}

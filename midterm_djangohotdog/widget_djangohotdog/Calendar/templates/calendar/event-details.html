@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}{{ object.activity }}{% endblock %}
+{% block content %}
+	<h2>{{ object.activity }}</h2>
+		<ul>
+			<li>Date and Time: {{ object.target_datetime|date:"m/d/Y, h:i A" }}</li>
+			<li>Estimated Hours: {{ object.estimated_hours }}</li>
+			<li>{{ object.course }}</li>
+			<li>Mode: {{ object.location.mode }}</li>
+			<li>Venue: {{ object.location.venue }}</li>
+		</ul>
+		<br>
+	<div>	
+		<a href = "../edit/">
+			<input type="submit" value="Edit Activity">
+		</a>
+	</div>
+{% endblock %}

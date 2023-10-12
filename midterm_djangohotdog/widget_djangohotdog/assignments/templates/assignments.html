@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Widget's Assignments{% endblock %}
+
+{% block content %}
+    <h1>Welcome to Widget's Assignments</h1>
+
+    <div>
+        {% for assignment in Assignments %}
+            <p><a href="{{assignment.get_absolute_url}}/details/">
+                {{assignment.course}} <br/>
+                {{assignment.name}}
+            </a></p>
+            <hr/>
+        {% endfor %}
+    </div>
+
+    <a href="add/">
+        <button>New Assignment</button>
+    </a>
+    <hr/>
+    <div class="footer">
+        <a href="/dashboard/">Dashboard</a> <br/>
+        <a href="/announcement_board/">Announcements</a> <br/>
+        <a href="/forum/">Forum</a> <br/>
+        <a href="/calendar/">Calendar</a> <br/>
+    </div>
+{% endblock %}

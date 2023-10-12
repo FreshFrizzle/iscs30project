@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Widget's Calendar of Activities{% endblock %}
+{% block content %}
+<h2>Widget's Calendar of Activities</h2>
+	<ul>
+		{% for activity in events %}
+		<li>
+			<a href="/calendar/events/{{ activity.get_absolute_url }}/details">
+				{{ activity.activity }}
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+	<a href = "events/add/" >
+		<button>New Activity</button>
+	</a>
+	<div class="footer">
+		<a href="/dashboard/">Dashboard</a><br>
+		<a href="/announcement_board/">Announcements</a><br>
+		<a href="/forum/">Forum</a><br>
+		<a href="/assignments/">Assignments</a><br>
+	</div>
+
+{% endblock %}

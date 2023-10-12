@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block title %}Widget's Forum{% endblock %}
+{% block content %}
+<h1>Welcome to Widget's Forum!</h1>
+  <h2>Forum Posts:</h2>
+  <ul>
+    {% for entry in post %}
+    <li>
+      <a href="{{ entry.get_absolute_detail_url }}" >
+      {{ entry }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  <br>
+  <a href="{% url 'Forum:post-add' %}" >
+    <button>New Post</button>
+  </a>
+  <br>
+
+<div class="footer">
+  <a href="/dashboard/">Dashboard</a> <br/>
+  <a href="/announcement_board/">Announcements</a> <br/>
+  <a href="/assignments/">Assignments</a> <br/>
+  <a href="/calendar/">Calendar</a> <br/>
+</div>
+
+{% endblock %}

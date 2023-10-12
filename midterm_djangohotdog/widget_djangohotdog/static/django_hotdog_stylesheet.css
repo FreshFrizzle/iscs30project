@@ -1,0 +1,52 @@
+body {
+  background-color: yellow;
+  background-image: linear-gradient(to right, yellow, pink);
+}
+
+* {
+  color: #111111;
+  font-family: Tahoma, Helvetica, sans-serif;
+  letter-spacing: 2px;
+}
+
+h1  {
+  text-align: center;
+}
+
+h1, h2 {
+  color: #800000;
+}
+
+a {
+  color: green;
+}
+
+a:hover {
+  transition: 0.3s;
+  color: #EEEEEE;
+}
+
+input[type="submit"], button {
+  background-color: #000080;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover, button:hover {
+  background-color: #0000AA;
+}
+
+div .replies{
+  margin-left:50px;
+  margin-right: 50%;
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+.footer {
+  text-align: center;
+}

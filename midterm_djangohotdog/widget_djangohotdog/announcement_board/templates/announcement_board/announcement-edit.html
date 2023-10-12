@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Edit Announcement {% endblock %}
+{% block content %}
+
+<h1>Edit Announcement</h1>
+<div class="form">
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <input type="submit" value="Save Changes to Announcement" />
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block title %}Add Post{% endblock %}
+{% block content %}
+<h1> Add a new post: </h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save New Post">
+</form>
+{% endblock %}

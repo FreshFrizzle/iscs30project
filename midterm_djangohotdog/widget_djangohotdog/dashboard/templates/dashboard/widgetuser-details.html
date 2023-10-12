@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{ object.title }} {% endblock %}
+{% block content %}
+
+<h2> {{object.first_name|upper}} {{object.middle_name|upper}} {{object.last_name|upper}} </h2>
+<p> {{object.department.dept_name}} </p>
+<p> {{object.department.home_unit}} </p>
+
+
+<form action="{% url 'dashboard:widgetuser-edit' pk=object.pk %}">
+    <input type="submit" value="Edit Widget User" />
+</form>
+
+{% endblock %}

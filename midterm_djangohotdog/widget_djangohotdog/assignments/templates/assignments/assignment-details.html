@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} {{object.name}} {% endblock %}
+
+{% block content %}
+    <h2>{{object.name}}</h2>
+
+    <div>
+        {{object.course.code}}
+        {{object.course.title}}-{{object.course.section}}
+        <br/>
+        Description: {{object.description}} <br/>
+        Perfect Score: {{object.perfect_score}} <br/>
+        Passing Score: {{object.passing_score}} <br/>
+    </div>
+
+    <div>
+        <a href="../edit/">
+            <button>Edit Assignment</button>
+        </a>
+    </div>
+
+    <div>
+        <a href="../../">Back to Assignments</a>
+    </div>
+{% endblock %}
